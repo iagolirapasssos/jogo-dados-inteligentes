@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo de Tabuleiro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Jogo de Tabuleiro - Aventura dos Dados</h1>
+    
+    <div id="controls">
+        <label for="players">Número de jogadores:</label>
+        <input type="number" id="players" min="2" max="4" value="2">
+        <button id="startGame">Iniciar Jogo</button>
+    </div>
+    
+    <div id="playerNames" class="hidden"></div>
+    
+    <div id="board" class="hidden"></div>
+
+    <div id="player-info" class="hidden">
+        <h2 id="currentPlayerName"></h2>
+        <label for="dice1">Valor do Dado 1:</label>
+        <input type="number" id="dice1" min="1" max="6">
+        <label for="dice2">Valor do Dado 2:</label>
+        <input type="number" id="dice2" min="1" max="6">
+        <button id="submitDice">Enviar Valores</button>
+        <div id="diceResult">Resultado: </div>
+    </div>
+
+    <div id="rank" class="hidden">
+        <h2>Ranking dos Jogadores</h2>
+        <ul id="rankingList"></ul>
+    </div>
+
+    <div id="modal" class="modal hidden">
+        <div class="modal-content">
+            <span id="modalMessage"></span>
+            <button id="closeModal">Fechar</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

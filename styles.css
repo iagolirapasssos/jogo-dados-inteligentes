@@ -1,0 +1,218 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #e66465, #9198e5);
+    color: white;
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+#board {
+    width: 100%;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 10px;
+    max-width: 1000px;
+}
+
+#board .cell {
+    background: url('https://www.transparenttextures.com/patterns/dark-denim-3.png');
+    border: 2px solid #fff;
+    border-radius: 10px;
+    height: 100px;
+    position: relative;
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease-in-out;
+}
+
+#board .cell.special {
+    background: #f39c12;
+}
+
+#board .cell.power {
+    background: #3498db;
+}
+
+#board .cell.failure {
+    background: #e74c3c;
+}
+
+.player {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    transition: all 0.5s ease;
+}
+
+#controls {
+    margin-bottom: 20px;
+}
+
+#player-info {
+    margin-top: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+#player-info h2, #player-info label, #player-info div {
+    font-family: 'Arial', sans-serif;
+    color: #333; /* Cor do texto */
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+input[type="number"], input[type="text"] {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    border: 2px solid #fff;
+    background-color: rgba(255, 255, 255, 0.8);
+    font-size: 16px;
+    color: black; /* Define a cor da fonte como preta */
+    outline: none;
+}
+
+input[type="number"]:focus, input[type="text"]:focus {
+    border-color: #f39c12;
+}
+
+/* Define a cor preta apenas para os labels dos campos dice1 e dice2 */
+label[for="dice1"], label[for="dice2"] {
+    font-size: 16px;
+    color: black; /* Define a cor da fonte como preta apenas para esses labels */
+    margin-right: 10px;
+}
+
+
+button {
+    background-color: #2ecc71;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #27ae60;
+}
+
+#diceResult {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #333;
+}
+
+#currentPlayerName {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #f39c12;
+}
+
+#rank {
+    margin-top: 30px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+#rank h2 {
+    font-family: 'Arial', sans-serif;
+    color: #e74c3c; /* Cor do título */
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#rankingList {
+    list-style: none;
+    padding: 0;
+}
+
+#rankingList li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #333; /* Cor do texto dos jogadores */
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+}
+
+#rankingList li .player-circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+#modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    visibility: hidden; /* O modal começa oculto */
+    opacity: 0;
+    transition: visibility 0s, opacity 0.3s ease;
+}
+
+.modal.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Define a cor preta para o conteúdo do modalMessage */
+#modalMessage {
+    color: black; /* Define a cor da fonte como preta para o modalMessage */
+    font-size: 18px;
+}
+
